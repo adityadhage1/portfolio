@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EV Range Predictor</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+</head>
+<body style="font-family: Arial; padding: 20px; max-width: 600px; margin: auto; text-align: center;">
+
+    <h1>EV Range Predictor</h1>
+    <p>Enter vehicle data to estimate range.</p>
+
+    <input type="number" id="input_data" placeholder="Battery %" style="padding: 10px;">
+    <button id="predict_btn" py-click="make_prediction" style="padding: 10px;">Predict Range</button>
+    
+    <h2 id="output">Result will appear here</h2>
+
+    <hr style="margin-top: 50px;">
+    <footer>
+        <p><strong>Integration Note:</strong> We are focused on applying this predictor to real cars with handy controls.</p>
+        <p><em>Crafted with love in Mumbai</em></p>
+    </footer>
+
+    <script type="py">
+        from pyscript import display, document
+
+        def make_prediction(event):
+            # Your prediction logic here
+            val = document.querySelector("#input_data").value
+            if val:
+                # Placeholder for your ML model math:
+                prediction = float(val) * 4.5 
+                document.querySelector("#output").innerText = f"Estimated Range: {prediction} km"
+    </script>
+</body>
+</html>
